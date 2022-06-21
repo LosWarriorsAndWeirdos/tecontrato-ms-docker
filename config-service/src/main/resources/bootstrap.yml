@@ -6,7 +6,7 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/LosWarriorsAndWeirdos/micro-services-tecontrato.git
+          uri: https://github.com/LosWarriorsAndWeirdos/tecontrato-ms-docker.git
           searchPaths: config-data
           default-label: "main"
   security:
