@@ -5,7 +5,7 @@ services:
     ports:
       - 8761:8761
     networks:
-      - tecontrato
+      - tecontrato1
 
   config-service:
     image: config-service:0.0.1-SNAPSHOT
@@ -19,7 +19,7 @@ services:
     ports:
       - 8081:8081
     networks:
-      - tecontrato
+      - tecontrato1
 
   admin:
     image: admin:0.0.1-SNAPSHOT
@@ -57,7 +57,7 @@ services:
       - registry-service
       - config-service
     networks:
-      - tecontrato
+      - tecontrato1
     ports:
       - 8092:8092
 
@@ -71,7 +71,7 @@ services:
       - registry-service
       - config-service
     networks:
-      - tecontrato
+      - tecontrato1
     ports:
       - 8091:8091
 
