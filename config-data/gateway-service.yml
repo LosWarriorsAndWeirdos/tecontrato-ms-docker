@@ -4,8 +4,7 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://micro-services-tecontrato_registry-service_1
-:8761/eureka/
+      defaultZone: http://registry-service:8761/eureka/
 
 spring:
   cloud:

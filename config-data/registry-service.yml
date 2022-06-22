@@ -3,7 +3,7 @@ server:
 
 eureka:
   instance:
-    hostname: micro-services-tecontrato_registry-service_1
+    hostname: registry-service_1
   client:
     registerWithEureka: false
     fetchRegistry: false
