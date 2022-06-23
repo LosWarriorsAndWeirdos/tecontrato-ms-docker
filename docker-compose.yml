@@ -1,14 +1,14 @@
 version: '3'
 services:
   registry-service:
-    image: registry-service:0.0.1-SNAPSHOT
+    image: josegab/tecontrato-docker-registry-service
     ports:
       - 8761:8761
     networks:
       - tecontrato1
 
   config-service:
-    image: config-service:0.0.1-SNAPSHOT
+    image: josegab/tecontrato-docker-config-service
     links:
       - registry-service
     environment:
@@ -22,7 +22,7 @@ services:
       - tecontrato1
 
   admin:
-    image: admin:0.0.1-SNAPSHOT
+    image: josegab/tecontrato-docker-admin
     environment:
       - JAVA_OPTS=
         -DEUREKA_SERVER=http://registry-service:8761/eureka
@@ -36,7 +36,7 @@ services:
       - tecontrato1
 
   gateway-service:
-    image: gateway-service:0.0.1-SNAPSHOT
+    image: josegab/tecontrato-docker-gateway-service
     environment:
       - JAVA_OPTS=
         -DEUREKA_SERVER=http://registry-service:8761/eureka
@@ -49,7 +49,7 @@ services:
       - 8080:8080
 
   budget-service:
-    image: budget-service:0.0.1-SNAPSHOT
+    image: josegab/tecontrato-docker-budget-service
     environment:
       - JAVA_OPTS=
         -DEUREKA_SERVER=http://registry-service:8761/eureka
@@ -62,7 +62,7 @@ services:
       - 8092:8092
 
   contractor-service:
-    image: contractor-service:0.0.1-SNAPSHOT
+    image: josegab/tecontrato-docker-contractor-service
     environment:
       - JAVA_OPTS=
         -DEUREKA_SERVER=http://registry-service:8761/eureka
@@ -76,7 +76,7 @@ services:
       - 8091:8091
 
   project-service:
-    image: project-service:0.0.1-SNAPSHOT
+    image: josegab/tecontrato-docker-project-service
     environment:
       - JAVA_OPTS=
         -DEUREKA_SERVER=http://registry-service:8761/eureka
@@ -90,7 +90,7 @@ services:
       - 8093:8093
 
   propietario-service:
-    image: propietario-service:0.0.1-SNAPSHOT
+    image: josegab/tecontrato-docker-propietario-service
     environment:
       - JAVA_OPTS=
         -DEUREKA_SERVER=http://registry-service:8761/eureka
